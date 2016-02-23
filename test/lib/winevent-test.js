@@ -1,6 +1,6 @@
 /* global describe, it */
 'use strict';
-var WinEvent = require('../../index');
+var WinEventReader = require('../../index');
 var EventLogger = require('node-windows').EventLogger;
 var assert = require('assert');
 var debug = require('debug')('winevent:test');
@@ -8,7 +8,7 @@ var debug = require('debug')('winevent:test');
 describe('WinEvent Module', function () {
     this.timeout(1000000);
     it('Should emit events from Windows Event Log', function () {
-        var winEvent = new WinEvent({
+        var winEvent = new WinEventReader({
             providers: ['node-event-reader Test Suite'],
             startTime: new Date(Date.now()),
             endTime: new Date(Date.now()),
@@ -34,6 +34,7 @@ describe('WinEvent Module', function () {
                         errorLogged: false
                     };
                     data.forEach(log => {
+                        debug(log);
                         if (log.levelDisplayName === 'Information') {
                             assert.equal(log.message, 'Information Log');
                             check.infoLogged = true;
@@ -57,6 +58,7 @@ describe('WinEvent Module', function () {
 
                 if (counter === 1) {
                     assert(1, data.length, 'Expected data.length to get 1 log objects');
+                    debug(data[0]);
                     var log = data[0];
                     assert(log.levelDisplayName === 'Information');
                     assert.equal(log.message, 'Information2 Log');
