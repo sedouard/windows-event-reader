@@ -14,6 +14,7 @@ npm install windows-event-reader --save
 **Creating a `WinEventReader` instance:**
 
 ```js
+var WinEventReader = require('windows-event-reader');
 // You can change start and end time to be different, but incremental
 // checking for new events will be within a time window specified by frequency
 var winEvent = new WinEventReader({
