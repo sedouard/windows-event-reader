@@ -1,6 +1,6 @@
 {
   "name": "windows-event-reader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A reader for Windows Event Log and ETW",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sedouard/windows-event-log.git"
+    "url": "git+https://github.com/sedouard/windows-event-reader.git"
   },
   "keywords": [
     "ETW",
@@ -19,9 +19,9 @@
   "author": "sedouard@microsoft.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sedouard/windows-event-log/issues"
+    "url": "https://github.com/sedouard/windows-event-reader/issues"
   },
-  "homepage": "https://github.com/sedouard/windows-event-log#readme",
+  "homepage": "https://github.com/sedouard/windows-event-reader#readme",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.11.3",
